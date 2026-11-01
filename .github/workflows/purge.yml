@@ -15,6 +15,9 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
     - name: 计算要清除缓存的文件
       id: purge_urls
       run: |
@@ -27,6 +30,7 @@ jobs:
           urls+="${baseUrl}/${f},"
         done
         echo "urls=${urls%,*}" >> $GITHUB_OUTPUT
+
     - name: 清除 JsDelivr CDN 缓存
       uses: egad13/purge-jsdelivr-cache@v1
       with:
