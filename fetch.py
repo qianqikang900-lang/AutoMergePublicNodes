@@ -247,8 +247,8 @@ class Node:
             elif self.type == 'hysteria2':
                 path = data.get('sni', '')+':'
                 path += data.get('obfs-password', '')+':'
-                # print(self.url)
-                # return hash(self.url)
+            elif self.type == 'anytls':
+                path = data.get('sni', '')+':'
             path += '@'+','.join(data.get('alpn', []))+'@'+data.get('password', '')+data.get('uuid', '')
             hashstr = f"{self.type}:{data['server']}:{data['port']}:{path}"
             return hash(hashstr)
@@ -265,7 +265,6 @@ class Node:
 
     @classmethod
     def urlparse0(cls, url: str, scheme=''):
-        # For non-standard node url only!
         if '#' in url:
             segs = url.split('#')
             fragment = segs[-1]
@@ -288,10 +287,8 @@ class Node:
         try:
             res = urlparse(url, scheme, allow_fragments=False)
         except ValueError:
-            # vless://[XXX]@server:443?#
             res = cls.urlparse0(url, scheme)
         if res.netloc.endswith(':'):
-            # hy2://https://XXX@server:443/?#
             return cls.urlparse0(url, scheme)
         if fragment:
             res = res._replace(fragment=fragment)
@@ -300,19 +297,16 @@ class Node:
     def load_url(self, url: str):
         try: self.type, dt = url.split("://", 1)
         except ValueError: raise NotANode(url)
-        # === Fix begin ===
         if not self.type.isascii():
             self.type = ''.join([_ for _ in self.type if _.isascii()])
             url = self.type+'://'+url.split("://")[1]
         if self.type == 'hy2': self.type = 'hysteria2'
-        # === Fix end ===
         loader: Optional[Callable[[str, str], None]] = \
                 getattr(self, '_load_'+self.type, None)
         if loader: loader(url, dt)
         else: raise UnsupportedType(self.type)
-        if ('server' in self.data and ':' in self.data['server'] and 
+        if ('server' in self.data and ':' in self.data['server'] and
                 not self.data['server'].startswith('[')):
-            # Fix IPv6
             self.data['server'] = f"[{self.data['server']}]"
 
     def _load_vmess(self, url: str, dt: str):
@@ -377,7 +371,6 @@ class Node:
                 'port': port, 'type': 'ss', 'password': passwd, 'cipher': cipher}
 
     def _load_ssr(self, url: str, dt: str):
-        # TODO: IPv6 server support
         if '?' in url:
             parts = dt.split(':')
         else:
@@ -518,6 +511,36 @@ class Node:
                 self.data[k] = v
             elif k == 'fp': self.data['client-fingerprint'] = v
 
+    def _load_anytls(self, url: str, dt: str):
+        """解析 anytls://password@host:port?sni=...&insecure=1&fp=chrome#name"""
+        parsed = self.urlparse(url)
+        self.data = {
+            'name': unquote(parsed.fragment or 'anytls'),
+            'server': parsed.hostname,
+            'port': parsed.port or 443,
+            'type': 'anytls',
+            'password': unquote(parsed.username or ''),
+            'udp': True,
+        }
+        if not parsed.query:
+            return
+        for kv in parsed.query.split('&'):
+            if '=' not in kv:
+                continue
+            k, v = kv.split('=', 1)
+            k = k.lower()
+            v = unquote(v)
+            if k in ('sni', 'servername', 'peer'):
+                self.data['sni'] = v
+            elif k in ('insecure', 'allowinsecure', 'skip-cert-verify'):
+                self.data['skip-cert-verify'] = (v not in ('0', 'false', 'no'))
+            elif k in ('fp', 'fingerprint', 'client-fingerprint'):
+                self.data['client-fingerprint'] = v
+            elif k == 'alpn':
+                self.data['alpn'] = [x.strip() for x in v.split(',') if x.strip()]
+            elif k == 'udp':
+                self.data['udp'] = (v not in ('0', 'false', 'no'))
+
     def _load_tuic(self, url: str, dt: str):
         parsed = self.urlparse(url)
         self.data = {
@@ -604,7 +627,7 @@ class Node:
                 print(name)
             name += '...'
         if FETCH_CONFIG['name_show_type']:
-            if self.type in ('ss', 'ssr', 'vless', 'tuic'):
+            if self.type in ('ss', 'ssr', 'vless', 'tuic', 'anytls'):
                 tp = self.type.upper()
             else:
                 tp = self.type.title()
@@ -629,11 +652,7 @@ class Node:
                 if server == domain.lstrip('.'): return True
                 if server.endswith(domain): return True
             if self.data['port'] < 20: return True
-            # TODO: Fake UUID
-            # if self.type == 'vmess' and len(self.data['uuid']) != len(DEFAULT_UUID):
-            #     return True
             if 'sni' in self.data and 'google.com' in self.data['sni'].lower():
-                # That's not designed for China
                 self.data['sni'] = 'www.bing.com'
         except Exception:
             print("无法验证的节点！", file=sys.stderr)
@@ -678,7 +697,6 @@ class Node:
         return f"ss://{passwd}@{data['server']}:{data['port']}#{quote(data['name'])}"
 
     def _url_ssr(self, data: DATA_TYPE) -> str:
-        # TODO: Fix IPv6
         ret = (':'.join([str(data[_]) for _ in ('server','port',
                                     'protocol','cipher','obfs')]) +
                 b64encodes_safe(data['password']) +
@@ -770,6 +788,23 @@ class Node:
         ret = ret.rstrip('&')+'#'+name
         return ret
 
+    def _url_anytls(self, data: DATA_TYPE) -> str:
+        passwd = quote(str(data.get('password', '')))
+        name = quote(data.get('name', 'anytls'))
+        ret = f"anytls://{passwd}@{data['server']}:{data['port']}?"
+        if data.get('sni'):
+            ret += f"sni={quote(str(data['sni']))}&"
+        if 'skip-cert-verify' in data:
+            ret += f"insecure={int(bool(data['skip-cert-verify']))}&"
+        if data.get('client-fingerprint'):
+            ret += f"fp={quote(str(data['client-fingerprint']))}&"
+        if data.get('alpn'):
+            alpn = data['alpn']
+            if isinstance(alpn, list):
+                alpn = ','.join(alpn)
+            ret += f"alpn={quote(str(alpn))}&"
+        return ret.rstrip('&') + '#' + name
+
     def _url_tuic(self, data: DATA_TYPE) -> str:
         passwd = quote(data['password'])
         uuid = quote(data['uuid'])
@@ -821,9 +856,7 @@ class Node:
             elif ret['flow'].endswith('!'):
                 ret['flow'] = ret['flow'][:-1]
         if 'alpn' in ret and isinstance(ret['alpn'], str):
-            # 'alpn' is not a slice
             ret['alpn'] = ret['alpn'].replace(' ','').split(',')
-        # A temporary fix for clash-party's `invalid REALITY short ID` error.
         if 'reality-opts' in ret and 'short-id' in ret['reality-opts']:
             ret['reality-opts']['short-id'] = '!!str '+ret['reality-opts']['short-id']
         return ret
@@ -832,6 +865,9 @@ class Node:
         if self.isfake: return False
         if 'obfs' in self.data and 'obfs-password' not in self.data:
             return False
+        # Meta/mihomo：hysteria2 / anytls / tuic
+        if self.type in ('hysteria2', 'anytls', 'tuic'):
+            return bool(meta)
         supported_cipher = None
         if meta:
             if self.type == 'vmess':
@@ -856,16 +892,14 @@ class Node:
                 return False
             if 'protocol' in self.data and self.data['protocol'] not in CLASH_SSR_PROTOCOL:
                 return False
-        # Vmess / SS / SSR
         if 'network' in self.data and self.data['network'] in ('h2','grpc'):
-            # A quick fix for #2
             self.data['tls'] = True
         if 'plugin-opts' in self.data and 'mode' in self.data['plugin-opts'] \
                 and not self.data['plugin-opts']['mode']: return False
         if 'reality-opts' in self.data:
             self.data['tls'] = True
             if self.data['reality-opts']:
-                if ('public-key' in self.data['reality-opts'] and 
+                if ('public-key' in self.data['reality-opts'] and
                         len(self.data['reality-opts']) != 43):
                     return False
             else:
@@ -877,10 +911,6 @@ class Node:
 
     def supports_ray(self) -> bool:
         if self.isfake: return False
-        # if self.type == 'ss':
-        #     if 'plugin' in self.data and self.data['plugin']: return False
-        # elif self.type == 'ssr':
-        #     return False
         if self.type == 'socks5' and self.data.get('tls'):
             return False
         return True
@@ -893,7 +923,7 @@ class Source():
             self.url_source = url
         elif url.startswith('+'):
             self.url_source = url
-            self.date = datetime.datetime.now()# + datetime.timedelta(days=1)
+            self.date = datetime.datetime.now()
             self.gen_url()
         else:
             self.url: str = url
@@ -1011,18 +1041,15 @@ class Source():
             text = self.content
             if isinstance(text, str):
                 if "proxies:" in text:
-                    # Clash config
                     config = yaml.full_load(text.replace("!<str>","!!str"))
                     sub = config['proxies']
                 elif '://' in text:
-                    # V2Ray raw list
                     sub = text.strip().splitlines()
                 else:
-                    # V2Ray Sub
                     sub = b64decodes(text.strip()).strip().splitlines()
             elif not isinstance(text, (list, tuple)):
                 sub = list(text)
-            else: sub = text # 动态节点抓取后直接传入列表
+            else: sub = text
 
             if 'max' in self.cfg and len(sub) > self.cfg['max']:
                 self.exc_queue.append(f"此订阅有 {len(sub)} 个节点，最大限制为 {self.cfg['max']} 个，忽略此订阅。")
@@ -1031,7 +1058,7 @@ class Source():
                 if isinstance(sub[0], str):
                     self.sub = [_ for _ in sub if _.split('://', 1)[0] not in self.cfg['ignore']]
                 elif isinstance(sub[0], dict):
-                    self.sub = [_ for _ in sub if _.get('type', '') not in self.cfg['ignore']] #type:ignore
+                    self.sub = [_ for _ in sub if _.get('type', '') not in self.cfg['ignore']]
                 else: self.sub = sub
             else: self.sub = sub
         except KeyboardInterrupt: raise
@@ -1127,13 +1154,6 @@ def raw2fastly(url: str) -> str:
     if url.startswith("https://raw.githubusercontent.com/") or \
             url.startswith("https://gist.githubusercontent.com/"):
         return "https://ghproxy.net/"+url
-    # url: Union[str, List[str]]
-    # if url.startswith("https://raw.githubusercontent.com/"):
-    #     url = url[34:].split('/')
-    #     url[1] += '@'+url[2]
-    #     del url[2]
-    #     url = "https://fastly.jsdelivr.net/gh/"+('/'.join(url))
-    #     return url
     return url
 
 def merge_adblock(adblock_name: str, rules: Dict[str, str]):
@@ -1192,8 +1212,8 @@ def merge_adblock(adblock_name: str, rules: Dict[str, str]):
                 domain_keys.add(domain)
             continue
         segs = domain.split('.')
-        if len(segs) == 4 and domain.replace('.','').isdigit(): # IP
-            for seg in segs: # '223.73.212.020' is not valid
+        if len(segs) == 4 and domain.replace('.','').isdigit():
+            for seg in segs:
                 if not seg: break
                 if seg[0] == '0' and seg != '0': break
             else:
@@ -1217,11 +1237,9 @@ def main():
     global merged, FETCH_TIMEOUT, ABFURLS, AUTOURLS, AUTOFETCH
     sources = open("sources.list", encoding="utf-8").read().strip().splitlines()
     if DEBUG_NO_NODES:
-        # !!! JUST FOR DEBUGING !!!
         print("!!! 警告：您已启用无节点调试，程序产生的配置不能被直接使用 !!!")
         sources = []
     if DEBUG_NO_DYNAMIC:
-        # !!! JUST FOR DEBUGING !!!
         print("!!! 警告：您已选择不抓取动态节点 !!!")
         AUTOURLS = AUTOFETCH = []
     print("正在生成动态链接...")
@@ -1363,7 +1381,6 @@ def main():
 
     rules: Dict[str, str] = {}
     if DEBUG_NO_ADBLOCK:
-        # !!! JUST FOR DEBUGING !!!
         print("!!! 警告：您已关闭对 Adblock 规则的抓取 !!!")
     else:
         merge_adblock(conf['proxy-groups'][-2]['name'], rules)
@@ -1422,12 +1439,10 @@ def main():
         else: print("规则 '"+rule+"' 无法被解析！"); continue
         for kwd in keywords:
             if kwd in rargument and kwd != rargument:
-                # print(rargument, "已被 KEYWORD", kwd, "命中")
                 break
         else:
             for sfx in suffixes:
                 if ('.'+rargument).endswith('.'+sfx) and sfx != rargument:
-                    # print(rargument, "已被 SUFFIX", sfx, "命中")
                     break
             else:
                 k = rtype+','+rargument
@@ -1435,7 +1450,6 @@ def main():
                     rules[k] = rpolicy
     conf['rules'] = [','.join(_) for _ in rules.items()]+[match_rule]
 
-    # Clash & Meta
     proxies: List[Node.DATA_TYPE] = []
     proxies_meta: List[Node.DATA_TYPE] = []
     ctg_base: Dict[str, Any] = conf['proxy-groups'][-1].copy()
@@ -1458,7 +1472,6 @@ def main():
     names_clash_meta = list(names_clash_meta)
     conf_meta = copy.deepcopy(conf)
 
-    # Clash
     conf['proxies'] = proxies
     for group in conf['proxy-groups']:
         if group.get('include-all'):
@@ -1488,7 +1501,6 @@ def main():
     with open("snippets/nodes.yml", 'w', encoding="utf-8") as f:
         f.write(yaml.dump({'proxies': proxies}, allow_unicode=True).replace('!!str ',''))
 
-    # Meta
     conf = conf_meta
     conf['proxies'] = proxies_meta
     for group in conf['proxy-groups']:
