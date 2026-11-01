@@ -123,7 +123,7 @@ proxies:
   server: 193.108.119.29
   sni: blog.iloverussia2026.com
   type: trojan
-- name: 🇩🇪DE_1|1.9MB/s
+- name: 🇩🇪DE_1|1.0MB/s
   password: None
   port: 9443
   server: 213.177.229.161

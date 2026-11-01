@@ -2620,77 +2620,67 @@ proxies:
   skip-cert-verify: true
   sni: m.ctrip.com
   type: trojan
-- name: 🇬🇧GB_1|2.2MB/s|R002-260618
-  password: None
-  port: 443
-  server: 37.120.233.18
-  skip-cert-verify: true
-  sub_tag: R002-260618
+- alterId: '1'
+  cipher: auto
+  name: 🇯🇵JP_1|1.4MB/s
+  network: tcp
+  port: 28788
+  server: wo6ah0f-g06.jp06-jz-vm0.entry.fr0528.art
+  servername: wo6ah0f-g06.jp06-jz-vm0.entry.fr0528.art
+  skip-cert-verify: false
   tls: true
-  type: http
+  type: vmess
   udp: true
-- name: 🇬🇧GB_2|1.0MB/s
+  uuid: a3b5a6fc-0b92-3b66-beda-eb2a49361a21
+  xudp: true
+- alterId: '1'
+  cipher: auto
+  name: 🇯🇵JP_2|4.9MB/s
+  network: tcp
+  port: 28786
+  server: ou44bxs-g04.jp06-jz-vm0.entry.fr0528.art
+  servername: ou44bxs-g04.jp06-jz-vm0.entry.fr0528.art
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  udp: true
+  uuid: d687b024-a5cf-3433-8d06-1c99e2e28821
+  xudp: true
+- name: 🇪🇸ES_1|2.7MB/s
   password: None
   port: 443
-  server: 84.17.50.193
+  server: 130.195.250.34
   skip-cert-verify: true
   tls: true
   type: http
-- name: 🇩🇪DE_1|1.9MB/s
+- name: 🇩🇪DE_1|1.0MB/s
   password: None
   port: 9443
   server: 213.177.229.161
   skip-cert-verify: true
   tls: true
   type: http
-- name: 🇯🇵JP_1|1.4MB/s
-  password: None
-  port: 40583
-  server: 120.232.204.58
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇨🇭CH_1|1018KB/s
-  password: None
-  port: 9443
-  server: 37.120.213.210
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇨🇭CH_2|1.9MB/s
-  password: None
+- name: 🇨🇾CY_1|1001KB/s
   port: 443
-  server: 31.7.62.50
+  server: 213.207.130.34
   skip-cert-verify: true
   tls: true
   type: http
-- name: 🇭🇷HR_1|2.1MB/s
-  password: None
-  port: 443
-  server: 154.47.29.161
+- alterId: 1
+  cipher: auto
+  name: 🇯🇵JP_3|4.4MB/s
+  port: 21581
+  server: 01eb6-g01.jp03-7d22-vm0.entry.fr0307a.art
   skip-cert-verify: true
   tls: true
-  type: http
-- name: 🇱🇻LV_1|1.1MB/s
-  password: None
-  port: 443
-  server: 109.248.147.66
+  type: vmess
+  udp: true
+  uuid: 7a6cb59b-fbcd-3f50-b5f2-a2534326c4c8
+- name: 🇧🇩BD_1|1.5MB/s
+  port: 1080
+  server: 47.245.99.1
   skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇪🇪EE_1|1.2MB/s
-  password: None
-  port: 9443
-  server: 95.153.31.66
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇪🇪EE_2|1.1MB/s
-  port: 9443
-  server: 192.159.101.174
-  skip-cert-verify: true
-  tls: true
-  type: http
+  type: socks5
 - client-fingerprint: firefox
   name: '🇩🇪 德国 | DEU #1'
   network: tcp
