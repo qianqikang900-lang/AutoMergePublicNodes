@@ -1571,6 +1571,14 @@ def main():
 
     print("写出完成！")
 
-if __name__ == '__main__':
-    from dynamic import AUTOURLS, AUTOFETCH
-    main()
+    if __name__ == '__main__':
+        from dynamic import AUTOURLS, AUTOFETCH
+        main()
+
+        # 在原版运行完成后，自动追加触发测速优选
+        print("\n正在自动触发测速优选脚本...")
+        try:
+            import subprocess
+            subprocess.run([sys.executable, "speedtest_top50.py"], check=True)
+        except Exception as e:
+            print(f"自动执行测速脚本时出错: {e}")
