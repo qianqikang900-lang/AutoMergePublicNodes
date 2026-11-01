@@ -3,7 +3,7 @@ name: Fetch
 on:
   workflow_dispatch:
   schedule:
-    # 表达式生成 https://crontab.guru/
+    # UTC 每 3 小时的 17 分（北京时间约 08:17、11:17、14:17…）
     - cron: '17 */3 * * *'
   push:
     paths:
@@ -14,61 +14,89 @@ on:
       - '**.py'
       - 'snippets/_*'
 
+# 允许 Actions 写回仓库
+permissions:
+  contents: write
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-    - name: 迁出代码
-      uses: actions/checkout@v6
-    - name: 设置时区
-      run: sudo timedatectl set-timezone 'Asia/Shanghai'
-    - name: 安装 Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: '3.x'
-        cache: 'pip'
-    - name: 安装依赖
-      run: pip install -r requirements.txt
-    - name: 执行任务
-      run: python ./fetch.py
-      
-    - name: 提交更改
-      run: |                 
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
-        git pull origin master
-        git add list*
-        git add snippets/
-        git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 抓取节点"
-    - name: 推送更改
-      uses: ad-m/github-push-action@master
-      with:
-        branch: master
+      - name: 迁出代码
+        uses: actions/checkout@v4
+        with:
+          # 必须拿到可写 token，后面才能 push
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # 若默认分支不是 master，改成你的默认分支名
+          ref: master
 
-    - name: 计算要清除缓存的文件
-      id: purge_urls
-      run: |
-        sleep 5
-        baseUrl="https://cdn.jsdelivr.net/gh/${{ github.repository }}@master"
-        urls=""
-        for f in `find snippets -name "*.yml" -type f`; do
-          urls+="${baseUrl}/${f},"
-        done
-        for f in `find . -name "list*" -type f -maxdepth 1`; do
-          urls+="${baseUrl}/${f},"
-        done
-        echo "urls=${urls%,*}" >> $GITHUB_OUTPUT
-    - name: 清除 JsDelivr CDN 缓存（批量，一次请求）
-      run: |
-        # jsDelivr 批量 purge：POST {"path":[url...]}，一次请求清所有文件，避免逐文件触发限流
-        json='{"path":['
-        sep=''
-        IFS=',' read -ra urls <<< "${{ steps.purge_urls.outputs.urls }}"
-        for u in "${urls[@]}"; do
-          json+="$sep\"$u\""
-          sep=','
-        done
-        json+=']}'
-        curl -sf --max-time 30 -X POST "https://purge.jsdelivr.net/" \
-          -H "Content-Type: application/json" -d "$json" || echo "清除失败(可忽略，jsDelivr 12 小时内会自动刷新)"
-      continue-on-error: true
+      - name: 设置时区
+        run: sudo timedatectl set-timezone 'Asia/Shanghai'
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 执行任务
+        run: python ./fetch.py
+
+      - name: 提交更改
+        id: commit
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git pull --rebase origin master || git pull origin master
+
+          git add list* snippets/ || true
+
+          if git diff --staged --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "没有文件变更，跳过提交"
+          else
+            git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 抓取节点"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 推送更改
+        if: steps.commit.outputs.changed == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+
+      - name: 计算要清除缓存的文件
+        if: steps.commit.outputs.changed == 'true'
+        id: purge_urls
+        run: |
+          sleep 5
+          baseUrl="https://cdn.jsdelivr.net/gh/${{ github.repository }}@master"
+          urls=""
+          for f in $(find snippets -name "*.yml" -type f 2>/dev/null); do
+            urls+="${baseUrl}/${f},"
+          done
+          for f in $(find . -name "list*" -type f -maxdepth 1 2>/dev/null); do
+            urls+="${baseUrl}/${f},"
+          done
+          echo "urls=${urls%,*}" >> $GITHUB_OUTPUT
+
+      - name: 清除 JsDelivr CDN 缓存（批量，一次请求）
+        if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
+        run: |
+          json='{"path":['
+          sep=''
+          IFS=',' read -ra urls <<< "${{ steps.purge_urls.outputs.urls }}"
+          for u in "${urls[@]}"; do
+            [ -z "$u" ] && continue
+            json+="$sep\"$u\""
+            sep=','
+          done
+          json+=']}'
+          curl -sf --max-time 30 -X POST "https://purge.jsdelivr.net/" \
+            -H "Content-Type: application/json" -d "$json" \
+            || echo "清除失败(可忽略，jsDelivr 12 小时内会自动刷新)"
