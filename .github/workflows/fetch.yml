@@ -3,8 +3,8 @@ name: Fetch
 on:
   workflow_dispatch:
   schedule:
-    # UTC 每 3 小时的 17 分（北京时间约 08:17、11:17、14:17…）
-    - cron: '17 */3 * * *'
+    # UTC  = 21:13（北京时间约 5:13）
+    - cron: '13 21 * * *'
   push:
     paths:
       - 'sources.list'
