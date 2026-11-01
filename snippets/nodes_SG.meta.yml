@@ -1,27 +1,6 @@
 proxies:
-- name: 🇸🇬[www.v2nodes.com] vless-SG
-  network: ws
-  port: 443
-  server: 172.64.152.241
-  servername: ccc.010304.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-    path: /fpsecurity=tls
 - client-fingerprint: chrome
-  name: 🇸🇬[www.v2nodes.com] vless-SG-1...
-  port: 56984
-  server: sg1.zestapp778.com
-  servername: sg1.zestapp778.com
-  tls: true
-  type: vless
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-- client-fingerprint: chrome
-  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
+  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #4'
   network: tcp
   port: 443
   server: sg003.zestapp778.com
@@ -30,9 +9,9 @@ proxies:
   tls: true
   type: vless
   uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-- client-fingerprint: chrome
+- client-fingerprint: firefox
   encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #4'
+  name: '新加坡 002 #1'
   network: ws
   port: 2096
   server: 139.162.27.96
@@ -45,11 +24,324 @@ proxies:
     headers:
       Host: free-server.techsonic.dev
     path: /free-server.techsonic.dev
-- encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #9'
+- name: '新加坡 003 #1'
+  network: ws
+  password: humanity
+  port: 443
+  server: 172.104.185.40
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- alterId: 0
+  cipher: auto
+  name: '新加坡 004 #1'
   network: ws
   port: 443
-  server: cf.877774.xyz
+  server: univstar.188.166.186.249.sslip.io
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  uuid: 572126f8-5301-83c2-0a26-c30ced3db7c4
+  ws-opts:
+    headers:
+      Host: goodfamily19.site
+    path: /
+- client-fingerprint: chrome
+  name: '新加坡 005 #1'
+  network: ws
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
+  port: 443
+  server: 103.25.202.114
+  sni: tjsp.hhxaf.cc.cd
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tjsp.hhxaf.cc.cd
+    path: /
+- client-fingerprint: chrome
+  ech-opts:
+    _dns: https://dns.alidns.com/dns-query
+    enable: true
+    query-server-name: cloudflare-ech.com
+  encryption: none
+  name: '新加坡 006 #1'
+  network: ws
+  packet-encoding: xudp
+  port: 8443
+  server: 207.148.119.176
+  servername: t1s1.rittbo.kdns.fr
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /
+- client-fingerprint: chrome
+  ech-opts:
+    _dns: https://dns.alidns.com/dns-query
+    enable: true
+    query-server-name: cloudflare-ech.com
+  encryption: none
+  name: '新加坡 007 #1'
+  network: ws
+  packet-encoding: xudp
+  port: 8443
+  server: 207.148.125.245
+  servername: t1s1.rittbo.kdns.fr
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /
+- client-fingerprint: chrome
+  name: '新加坡 008 #1'
+  network: ws
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
+  port: 443
+  server: 139.162.62.195
+  sni: tjsp.hhxaf.cc.cd
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tjsp.hhxaf.cc.cd
+    path: /
+- name: '新加坡 009 #1'
+  network: ws
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
+  port: 8443
+  server: 66.42.51.60
+  skip-cert-verify: true
+  sni: hhcm.hhxaf.cc.cd
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: hhcm.hhxaf.cc.cd
+    path: /
+- name: '新加坡 010 #1'
+  network: ws
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
+  port: 443
+  server: 45.77.241.64
+  skip-cert-verify: true
+  sni: tjsp.hhxaf.cc.cd
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: tjsp.hhxaf.cc.cd
+    path: /
+- client-fingerprint: chrome
+  name: '新加坡 011 #1'
+  network: ws
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
+  port: 443
+  server: 139.59.224.185
+  sni: tjsp.hhxaf.cc.cd
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tjsp.hhxaf.cc.cd
+    path: /
+- client-fingerprint: chrome
+  name: '新加坡 012 #1'
+  network: ws
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
+  port: 443
+  server: 13.250.31.132
+  sni: hhcm.hhxaf.cc.cd
+  type: trojan
+  ws-opts:
+    headers:
+      Host: hhcm.hhxaf.cc.cd
+    path: /
+- name: '新加坡 013 #1'
+  network: ws
+  packet-encoding: xudp
+  port: 80
+  server: 54.255.211.0
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: a3ca2f6f-3905-406b-b15e-873bed123033
+  ws-opts:
+    headers:
+      Host: education.panelvps.eu.org
+    path: /vless
+- encryption: none
+  name: '新加坡 014 #1'
+  network: tcp
+  packet-encoding: xudp
+  port: 443
+  server: 139.162.61.57
+  servername: 139.162.61.57
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+- name: '新加坡 015 #1'
+  network: ws
+  packet-encoding: xudp
+  port: 80
+  server: education.panelvps.eu.org
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: a3ca2f6f-3905-406b-b15e-873bed123033
+  ws-opts:
+    headers:
+      Host: education.panelvps.eu.org
+    path: /vless
+- alterId: 0
+  cipher: auto
+  name: '新加坡 016 #1'
+  network: tcp
+  port: 47630
+  server: 43.228.126.187
+  skip-cert-verify: true
+  type: vmess
+  uuid: 9e5c6ebf-35f9-49a3-9f12-cba2b7cdbccb
+- name: '新加坡 017 #1'
+  network: tcp
+  port: 443
+  server: 45.32.117.217
+  servername: sg003.zestapp778.com
+  skip-cert-verify: false
+  tfo: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+- client-fingerprint: firefox
+  encryption: none
+  name: '新加坡 018 #1'
+  network: tcp
+  port: 443
+  server: 45.77.40.28
+  servername: sg003.zestapp778.com
+  skip-cert-verify: false
+  tfo: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+- alterId: 0
+  cipher: auto
+  name: '新加坡 019 #1'
+  network: ws
+  port: 16737
+  server: 139.180.211.152
+  skip-cert-verify: true
+  type: vmess
+  uuid: 1458e38c-9f71-4c3c-aa70-aaccda6789dd
+  ws-opts:
+    headers:
+      Host: m.twitter.com
+    path: /
+- alterId: 0
+  cipher: auto
+  name: '新加坡 020 #1'
+  network: ws
+  port: 18063
+  server: 139.180.211.152
+  skip-cert-verify: true
+  type: vmess
+  uuid: 0d4f647b-0d96-4820-9de8-0186156185dd
+  ws-opts:
+    headers:
+      Host: m.zoom.us
+    path: /Dialog Zoom
+- alterId: 64
+  cipher: auto
+  name: '新加坡 021 #1'
+  network: ws
+  port: 30010
+  server: 103.254.152.82
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.47876202.xyz
+    path: /path/191019072927
+- alterId: 1
+  cipher: auto
+  name: '新加坡 022 #1'
+  network: ws
+  port: 21888
+  server: 104.248.148.147
+  skip-cert-verify: true
+  type: vmess
+  uuid: ae7486f9-d7b7-4f26-97a0-dc5b093dfa89
+  ws-opts:
+    headers:
+      Host: 104.248.148.147
+    path: /
+- alterId: 0
+  cipher: auto
+  name: '新加坡 023 #1'
+  network: ws
+  port: 80
+  server: 139.99.61.154
+  servername: ''
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: 932a1f0d-f5ce-418d-8560-c88f53c534b9
+  ws-opts:
+    headers:
+      Host: 139.99.61.154
+    path: /vmess
+- alterId: 4
+  cipher: auto
+  name: '新加坡 024 #1'
+  network: ws
+  port: 443
+  server: 103.253.26.134
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: aba50dd4-5484-3b05-b14a-4661caf862d5
+  ws-opts:
+    headers:
+      Host: eeh7iewe.com
+    path: /ws
+- alterId: 4
+  cipher: auto
+  name: '新加坡 025 #1'
+  network: ws
+  port: 443
+  server: 103.253.26.20
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: aba50dd4-5484-3b05-b14a-4661caf862d5
+  ws-opts:
+    headers:
+      Host: zecjk.com
+    path: /ws
+- client-fingerprint: unsafe
+  encryption: none
+  name: 🇸🇬[www.v2nodes.com] vless-SG
+  network: ws
+  port: 443
+  server: 172.66.1.36
   servername: ccc.010304.xyz
   skip-cert-verify: false
   tls: true
@@ -58,26 +350,67 @@ proxies:
   ws-opts:
     headers:
       Host: ccc.010304.xyz
-    path: /fp
-- encryption: none
-  name: 🇸🇬[www.v2nodes.com] vless-SG-9...
+    path: /
+- name: '🇸🇬[www.v2nodes.com] vless-SG #...'
   network: ws
-  port: 8080
-  server: 172.67.75.172
-  tls: false
+  port: 443
+  server: 88.216.69.253
+  servername: ccc.010304.xyz
+  skip-cert-verify: false
+  tls: true
   type: vless
-  uuid: 3e06b1db-2efb-446e-ba2d-68850dfd2f9d
+  uuid: d342d11e-d224-4463-b982-532309285094
   ws-opts:
     headers:
-      Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
+      Host: ccc.010304.xyz
+    path: /fp=chromefp=unsafe
+- client-fingerprint: chrome
+  name: 'SG【机场推荐：https://a9a.xyz】12 #1'
+  network: tcp
+  port: 56984
+  server: sg1.zestapp778.com
+  servername: sg1.zestapp778.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  ws-opts:
+    headers:
+      Host: sg1.zestapp778.com
+    path: /
+- client-fingerprint: chrome
+  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
+  network: ws
+  port: 443
+  server: 104.20.17.210
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
     path: /
 - encryption: none
   name: '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
   network: ws
+  port: 2082
+  server: 104.18.0.181
+  servername: 'hhlfy.twiladaphne.ndjp.net '
+  tls: false
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+    path: /fp
+- client-fingerprint: chrome
+  encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
+  network: ws
   port: 443
   server: 172.66.0.162
   servername: ccc.010304.xyz
-  skip-cert-verify: false
   tls: true
   type: vless
   uuid: d342d11e-d224-4463-b982-532309285094
@@ -86,7 +419,1719 @@ proxies:
       Host: ccc.010304.xyz
     path: /
 - client-fingerprint: chrome
-  name: '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
+  name: '🇸🇬[www.v2nodes.com] vless-SG-8... #1'
+  network: ws
+  port: 443
+  server: 104.26.4.2
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+- cipher: aes-256-gcm
+  name: 🇸🇬[www.v2nodes.com] ss-SG-1559...
+  password: qpSevKaUXYQKvSjp
+  port: 8388
+  server: 139.180.220.175
+  type: ss
+- name: 🇸🇬 新加坡 | trojan | 74
+  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
+  port: 8886
+  server: 139.180.146.200
+  sni: 139.180.146.200
+  type: trojan
+- name: C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_82281b...
+  password: None
+  port: 9443
+  server: 152.233.9.239
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: D🔴🇸🇬hos[🤖✨🎞️✈️]_dokng.com_ec84...
+  password: None
+  port: 9090
+  server: 104.248.151.93
+  skip-cert-verify: true
+  type: http
+- name: 🇸🇬SG_3|1.0MB/s
+  password: '!!str 1234'
+  port: 2080
+  server: 18.143.144.220
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+- auth: 7e68e32f-8015-4f37-9082-70e8b0b58043
+  fingerprint: C1:FD:40:94:1F:91:9B:5C:78:96:24:40:97:F2:2D:9D:95:8E:62:5C:D9:58:B7:5F:34:CC:FA:42:18:1F:50:B2
+  name: '🇸🇬 新加坡 | SGP #1'
+  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
+  port: 443
+  server: 13.212.240.147
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: false
+  type: hysteria2
+- name: 🇸🇬 新加坡 | trojan | 191
+  network: ws
+  password: humanity
+  port: 443
+  server: 194.114.138.162
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: '🇸🇬 新加坡 | SGP #2'
+  password: humanity
+  port: 443
+  server: 194.114.138.162
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+- name: 🇸🇬 新加坡 | SGP
+  network: ws
+  port: 2082
+  server: 104.18.35.86
+  servername: hhlfy.twiladaphne.ndjp.net
+  tls: false
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+    path: /fp
+- name: C🟠🇸🇬hos_dokng.com_a075a65c
+  password: '!!str 1234'
+  port: 2080
+  server: 47.129.174.248
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+- name: C🟠🇸🇬hos_dokng.com_c22575f5
+  password: '!!str 1234'
+  port: 2080
+  server: 13.229.57.163
+  skip-cert-verify: true
+  type: http
+  udp: true
+  username: '1234'
+- name: C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_7b0014...
+  password: '!!str 1234'
+  port: 2080
+  server: 54.255.133.243
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+- name: C🟠🇸🇬hos[🎬📺🎪]_dokng.com_17fbfe1...
+  password: '!!str 1234'
+  port: 2080
+  server: 54.151.160.36
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+- name: C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_e68b32...
+  password: '!!str 1234'
+  port: 2080
+  server: 52.221.234.145
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+- name: D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_351f71...
+  port: 443
+  server: 156.146.56.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_600fd6...
+  port: 9090
+  server: 128.199.113.85
+  skip-cert-verify: true
+  type: http
+- name: 🇨🇳 中国 | socks5 | 43
+  password: '!!str 8888'
+  port: 1080
+  server: 47.236.168.243
+  skip-cert-verify: true
+  tls: false
+  type: socks5
+  username: '8888'
+- name: D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_049361...
+  port: 9090
+  server: 167.172.76.176
+  type: http
+- name: D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_47836c...
+  port: 9090
+  server: 128.199.121.61
+  type: http
+- name: D🔴🇸🇬hos[📺🎭✈️🔍]_dokng.com_c3596...
+  port: 9090
+  server: 128.199.116.219
+  type: http
+- name: D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_0f714f...
+  password: None
+  port: 9090
+  server: 167.99.74.174
+  type: http
+- name: D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_eb9f8b...
+  password: None
+  port: 443
+  server: 154.26.139.24
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_b2f7ca...
+  password: None
+  port: 443
+  server: 156.146.56.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_3d1510...
+  network: ws
+  port: 443
+  server: sgtht.wawojk.dpdns.org
+  servername: sgtht.wawojk.dpdns.org
+  tls: true
+  type: vless
+  uuid: 953150e0-cd65-408e-9d71-01b1fee8a172
+  ws-opts:
+    headers:
+      Host: sgtht.wawojk.dpdns.org
+    path: /adaa734f-f8c4-4778-8584-ab92e18d5c25-vm
+- name: A🟢🇸🇬res[🎬🤖📺🎭]_dokng.com_8bd7e9...
+  port: 9443
+  server: 149.88.99.209
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- client-fingerprint: firefox
+  encryption: none
+  name: '[OpenRay] 🇸🇬SG-82'
+  network: ws
+  port: 443
+  server: 43.170.8.95
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
+- client-fingerprint: chrome
+  encryption: none
+  name: 新加坡_110107338
+  network: ws
+  port: 8441
+  server: 45.77.241.190
+  servername: d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev
+  tls: true
+  type: vless
+  uuid: 7e622534-4a90-40ba-bb30-5cb5403be121
+  ws-opts:
+    headers:
+      Host: d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev
+    path: /@Marisa_kristi
+- client-fingerprint: firefox
+  name: '[OpenRay] 🇸🇬SG-191'
+  network: ws
+  port: 627
+  server: 142.91.101.39
+  servername: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  tls: true
+  type: vless
+  uuid: aff1ffd0-594c-44c9-9f79-4096fde005ea
+  ws-opts:
+    headers:
+      Host: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+    path: /@Marisa_kristifp=chrome
+- client-fingerprint: chrome
+  name: 新加坡_110107340 t.me/rjsxrd
+  network: ws
+  port: 627
+  server: 142.91.101.39
+  servername: 7nnoiou0z.3xn99hzq2sh7iekktpkeq7rofs3qc8iohrqs4pb9p.workers.dev
+  tls: true
+  type: vless
+  uuid: e27ffb19-314e-449b-ac9b-44b28cf50ef5
+  ws-opts:
+    headers:
+      Host: 7nnoiou0z.3xn99hzq2sh7iekktpkeq7rofs3qc8iohrqs4pb9p.workers.dev
+    path: /@Marisa_kristi
+- client-fingerprint: chrome
+  name: '[OpenRay] 🇸🇬SG-225'
+  network: ws
+  port: 53646
+  server: 54.179.79.12
+  servername: 3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev
+  tls: true
+  type: vless
+  uuid: b500fb53-24da-4a30-90a7-1e61acd50c61
+  ws-opts:
+    headers:
+      Host: 3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev
+    path: /@Marisa_kristi
+- client-fingerprint: chrome
+  name: 新加坡_110107330
+  network: ws
+  port: 627
+  server: 142.91.101.39
+  servername: 5iv93opy8jus9z.bjo5si35c9i9ud4242fado49188obkoiermjuxj7zgxu.workers.dev
+  tls: true
+  type: vless
+  uuid: 63738559-6af2-424b-8dc9-77d6edba7804
+  ws-opts:
+    headers:
+      Host: 5iv93opy8jus9z.bjo5si35c9i9ud4242fado49188obkoiermjuxj7zgxu.workers.dev
+    path: /@Marisa_kristi
+- client-fingerprint: chrome
+  encryption: none
+  name: 新加坡_110107240
+  network: ws
+  port: 627
+  server: 142.91.101.39
+  servername: 9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev
+  tls: true
+  type: vless
+  uuid: c6395e12-45a4-48db-9169-16264f6da764
+  ws-opts:
+    headers:
+      Host: 9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev
+    path: /@Marisa_kristi
+- client-fingerprint: chrome
+  encryption: none
+  name: 新加坡_110107235 t.me/rjsxrd
+  network: ws
+  port: 627
+  server: 142.91.101.39
+  servername: 3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev
+  tls: true
+  type: vless
+  uuid: 259253f0-1c3e-42e3-a12e-2badd0a1f5bb
+  ws-opts:
+    headers:
+      Host: 3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev
+    path: /@Marisa_kristi
+- client-fingerprint: chrome
+  name: '[OpenRay] 🇸🇬SG-130'
+  network: ws
+  port: 627
+  server: 142.91.101.39
+  servername: 7nnoiou0z.3xn99hzq2sh7iekktpkeq7rofs3qc8iohrqs4pb9p.workers.dev
+  tls: true
+  type: vless
+  uuid: 3f87daa8-3af8-40a0-b655-127911e008dc
+  ws-opts:
+    headers:
+      Host: 7nnoiou0z.3xn99hzq2sh7iekktpkeq7rofs3qc8iohrqs4pb9p.workers.dev
+    path: /@Marisa_kristi
+- client-fingerprint: chrome
+  encryption: none
+  name: '[OpenRay] 🇸🇬SG-210'
+  network: ws
+  port: 2096
+  server: 139.162.27.96
+  servername: free-server.techsonic.dev
+  tls: true
+  type: vless
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  ws-opts:
+    path: /free-server.techsonic.dev
+- client-fingerprint: chrome
+  name: '[OpenRay] 🇸🇬SG-91'
+  network: ws
+  port: 627
+  server: 142.91.101.39
+  servername: 7nnoiou0z.3xn99hzq2sh7iekktpkeq7rofs3qc8iohrqs4pb9p.workers.dev
+  tls: true
+  type: vless
+  uuid: 50f7f0fe-32be-4d5a-9432-095160ff7775
+  ws-opts:
+    headers:
+      Host: 7nnoiou0z.3xn99hzq2sh7iekktpkeq7rofs3qc8iohrqs4pb9p.workers.dev
+    path: /@Marisa_kristi
+- client-fingerprint: chrome
+  encryption: none
+  name: '[OpenRay] 🇸🇬SG-194'
+  network: ws
+  port: 627
+  server: 142.91.101.39
+  servername: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  tls: true
+  type: vless
+  uuid: 8199228b-e84b-42a2-9268-e400391e483a
+  ws-opts:
+    headers:
+      Host: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+    path: /@Marisa_kristi
+- client-fingerprint: chrome
+  encryption: none
+  name: 新加坡_110107245
+  network: ws
+  port: 53646
+  server: 54.179.79.12
+  servername: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+  tls: true
+  type: vless
+  uuid: 578427ba-ab06-4219-ac9d-c99e2b71c9a3
+  ws-opts:
+    headers:
+      Host: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+    path: /@Marisa_kristi
+- name: '[OpenRay] 🇸🇬SG-29'
+  network: ws
+  port: 627
+  server: 142.91.101.39
+  servername: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+  tls: true
+  type: vless
+  uuid: d2bbe123-c4a6-40a7-ac21-8919d0ca2030
+  ws-opts:
+    headers:
+      Host: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+    path: /@Marisa_kristifp=chrome
+- name: 🇸🇬 新加坡 | vless | 01
+  network: ws
+  port: 443
+  server: 206.238.237.119
+  servername: zdy667.kpcloud.eu.org
+  tls: false
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    path: /bluesecurity=tls
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 03
+  network: ws
+  port: 8443
+  server: 206.238.238.222
+  tls: true
+  type: vmess
+  uuid: f5f0babe-aea2-4f07-a1fc-3c9820253f49
+  ws-opts:
+    headers:
+      Host: uk.frnhk.xyz
+    path: /London31
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 04
+  network: ws
+  port: 8443
+  server: 206.238.239.109
+  tls: true
+  type: vmess
+  uuid: f5f0babe-aea2-4f07-a1fc-3c9820253f49
+  ws-opts:
+    headers:
+      Host: uk.frnhk.xyz
+    path: /London31
+- name: 🇸🇬 新加坡 | vless | 05
+  network: ws
+  port: 39738
+  server: 101.33.75.233
+  servername: c.eoa.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 03d73bc8-01a9-46a7-90b9-3d27065ed328
+  ws-opts:
+    headers:
+      Host: c.eoa.ccwu.cc
+    path: /fp=chrome
+- cipher: rc4-md5
+  name: 🇸🇬 新加坡 | ss | 07
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 68.183.227.4
+  type: ss
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 16
+  network: ws
+  port: 80
+  server: 15.235.184.36
+  servername: ''
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: 7ce525f5-3a9b-4627-ae0e-3ca0b57519e3
+  ws-opts:
+    path: /vmess
+- name: 🇸🇬 新加坡 | vless | 28
+  network: ws
+  port: 12580
+  server: 43.156.235.151
+  servername: c.eoa.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 03d73bc8-01a9-46a7-90b9-3d27065ed328
+  ws-opts:
+    headers:
+      Host: c.eoa.ccwu.cc
+    path: /fp=chrome
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 33
+  network: ws
+  port: 80
+  server: 15.235.147.186
+  servername: 15.235.147.186
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 6fea1649-425b-4092-bf53-29792152c925
+  ws-opts:
+    path: /sshkit/Ertusg86/635014638c264/
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 37
+  network: ws
+  port: 80
+  server: 143.198.219.182
+  servername: ''
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: e9c4ce52-9a78-4381-b6f8-23350bc4d606
+  ws-opts:
+    path: /v2ray
+- name: 🇸🇬 新加坡 | vless | 42
+  network: ws
+  port: 54321
+  server: 101.33.45.201
+  servername: c.eoa.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 03d73bc8-01a9-46a7-90b9-3d27065ed328
+  ws-opts:
+    headers:
+      Host: c.eoa.ccwu.cc
+    path: /fp=chrome
+- name: 🇸🇬 新加坡 | trojan | 43
+  password: 16bcc187-a1a0-4b8a-8b69-627f38b7cc0d
+  port: 80
+  server: 15.235.197.4
+  sni: getandroid.com
+  type: trojan
+- name: 🇸🇬 新加坡 | vless | 54
+  port: 34249
+  server: 129.150.51.127
+  servername: www.microsoft.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: 0590ab38-cb22-41d3-8312-6f396a5cec58
+- alterId: 64
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 56
+  network: ws
+  port: 80
+  server: 159.223.94.156
+  servername: ''
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: 533724ad-58ef-4147-88dc-9da523c15fc4
+  ws-opts:
+    path: /anti13.zingfast.vn
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 61
+  network: ws
+  port: 80
+  server: 109.123.237.41
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 03a77360-808d-11ed-b736-205c6d5f5d78
+  ws-opts:
+    path: /
+- name: 🇸🇬 新加坡 | vless | 76
+  network: ws
+  port: 51262
+  server: 175.41.179.37
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: 6c6ea474-0cf5-4a3d-bc81-aa2eeb6516d6
+  ws-opts:
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+    path: /@Marisa_kristifp=chrome
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 83
+  network: ws
+  port: 80
+  server: 139.99.61.53
+  servername: 139.99.61.53
+  tls: false
+  type: vmess
+  uuid: 60f30e26-0af7-4b64-ba94-71450ed77e23
+  ws-opts:
+    path: /vmess
+- name: 🇸🇬 新加坡 | vless | 87
+  network: ws
+  port: 8441
+  server: 45.77.241.190
+  servername: d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev
+  tls: false
+  type: vless
+  uuid: 7e622534-4a90-40ba-bb30-5cb5403be121
+  ws-opts:
+    headers:
+      Host: d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev
+    path: /@Marisa_kristifp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | trojan | 89
+  password: pvZE3UfT0ziK1omVLlsjINBqeqqwab1M
+  port: 50573
+  server: 139.59.238.97
+  type: trojan
+- name: 🇸🇬 新加坡 | vless | 90
+  network: ws
+  port: 80
+  server: 43.169.18.179
+  tls: false
+  type: vless
+  uuid: 5b6e7300-8fc8-404e-8dc9-40a5393dd881
+  ws-opts:
+    headers:
+      Host: line.smartphone1.azazilvpn.sbs
+    path: /XnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXn?ed
+- cipher: chacha20-ietf-poly1305
+  name: 🇸🇬 新加坡 | ss | 92
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  port: 2377
+  server: 18.143.63.164
+  type: ss
+- name: 🇸🇬 新加坡 | vless | 93
+  network: ws
+  port: 9999
+  server: 43.160.247.113
+  servername: c.eoa.ccwu.cc
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: 03d73bc8-01a9-46a7-90b9-3d27065ed328
+  ws-opts:
+    headers:
+      Host: c.eoa.ccwu.cc
+    path: /fp=chrome
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 97
+  network: ws
+  port: 80
+  server: free.sg.zpctech.xyz
+  servername: portal-as.ruijienetworks.com
+  tls: false
+  type: vmess
+  uuid: 5803eb04-b3af-4b62-925b-6a31badb883b
+  ws-opts:
+    headers:
+      Host: portal-as.ruijienetworks.com
+    path: /pcqwas1
+- name: 🇸🇬 新加坡 | vless | 98
+  network: ws
+  port: 53646
+  server: 54.179.79.12
+  servername: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+  tls: false
+  type: vless
+  uuid: 578427ba-ab06-4219-ac9d-c99e2b71c9a3
+  ws-opts:
+    headers:
+      Host: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+    path: /@Marisa_kristifp=chromesecurity=tls
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 100
+  network: ws
+  port: 80
+  server: 157.230.36.235
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: b484d576-b3e3-4ac5-b108-88a300dfe7e3
+  ws-opts:
+    path: /graphql
+- name: 🇸🇬 新加坡 | vless | 101
+  network: ws
+  port: 20205
+  server: 152.42.217.192
+  servername: nisav2de2t0ai8p-hd0.misa.cc.cd
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  uuid: 00000000-0000-4000-8000-000000000000
+  ws-opts:
+    headers:
+      Host: nisav2de2t0ai8p-hd0.misa.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 109
+  network: ws
+  port: 443
+  server: 43.170.8.95
+  servername: jp3.yohototo.top
+  tls: true
+  type: vless
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxywsfp=firefox
+- name: 🇸🇬 新加坡 | trojan | 112
+  network: ws
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
+  port: 443
+  server: 43.170.8.95
+  sni: hhcm.hhxaf.cc.cd
+  type: trojan
+  ws-opts:
+    path: /
+- name: 🇸🇬 新加坡 | vless | 114
+  network: ws
+  port: 627
+  server: 142.91.101.39
+  servername: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+  tls: false
+  type: vless
+  uuid: d2bbe123-c4a6-40a7-ac21-8919d0ca2030
+  ws-opts:
+    headers:
+      Host: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+    path: /@Marisa_kristifp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 115
+  port: 42110
+  server: 142.91.102.42
+  tls: false
+  type: vless
+  uuid: 366ae9eb-56b6-4ce7-a7c2-ab0e1f4ecf5c
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 117
+  network: ws
+  port: 53437
+  server: az-1.linkaa.xyz
+  servername: az-1.linkaa.xyz
+  tls: false
+  type: vmess
+  uuid: 6E571484-4166-4699-8F58-B34A1823691F
+  ws-opts:
+    headers:
+      Host: az-1.linkaa.xyz
+    path: /game/resources
+- name: 🇸🇬 新加坡 | vless | 124
+  network: ws
+  port: 443
+  server: 43.174.246.46
+  servername: sni2.irandoc.info
+  tls: false
+  type: vless
+  uuid: fd9a728d-ece1-4168-c5a4-c28ecb5a0065
+  ws-opts:
+    headers:
+      Host: m.irandoc.info
+    path: /37807/apifp=firefoxsecurity=tls
+- name: 🇸🇬 新加坡 | trojan | 125
+  password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+  port: 443
+  server: 43.160.197.160
+  type: trojan
+- name: 🇸🇬 新加坡 | trojan | 127
+  network: ws
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
+  port: 443
+  server: 43.169.19.179
+  sni: tjsp.hhxaf.cc.cd
+  type: trojan
+  ws-opts:
+    path: /
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇸🇬 新加坡 | vless | 129
+  network: ws
+  port: 443
+  server: www.lianchuang123.com
+  servername: sni.mmadcoffee.info
+  tls: true
+  type: vless
+  uuid: 2c473bc0-484c-49d5-8cf3-c89d26b724fe
+  ws-opts:
+    headers:
+      Host: smtp.mmadcoffee.info
+    path: /16838/c89d26b724fe/
+- name: 🇸🇬 新加坡 | vless | 131
+  network: ws
+  port: 443
+  server: 43.174.247.53
+  servername: aron.irandoc.info
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 0fc3eba4-2774-4c99-cfc7-c38b007908b0
+  ws-opts:
+    headers:
+      Host: aron.irandoc.info
+    path: /55072/apifp=chrome
+- name: 🇸🇬 新加坡 | vless | 132
+  port: 443
+  server: 43.169.18.179
+  tls: false
+  type: vless
+  uuid: 06b65903-406d-4a41-8463-6fd5c0ee7798
+- name: 🇸🇬 新加坡 | vless | 142
+  network: ws
+  port: 443
+  server: 45.118.133.249
+  servername: free.nadun.store
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 20ff936a-8eb5-4d27-9cce-93f2016d467b
+  ws-opts:
+    headers:
+      Host: free.nadun.store
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | trojan | 143
+  password: 7522e2c27233459aab8d0f1d715828d0
+  port: 443
+  server: 185.151.146.211
+  skip-cert-verify: true
+  sni: www.gpt123.one
+  type: trojan
+- name: 🇸🇬 新加坡 | vless | 144
+  network: ws
+  port: 443
+  server: 165.22.106.244
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | trojan | 147
+  network: ws
+  password: humanity
+  port: 443
+  server: 43.169.18.179
+  skip-cert-verify: true
+  sni: www.creationlong.org
+  type: trojan
+  ws-opts:
+    headers:
+      Host: www.creationlong.org
+    path: '%2Fassignment'
+- name: 🇸🇬 新加坡 | vless | 148
+  network: ws
+  port: 2096
+  server: 139.162.27.96
+  servername: free-server.techsonic.dev
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  ws-opts:
+    headers:
+      Host: free-server.techsonic.dev
+    path: /free-server.techsonic.devsecurity=tls
+- name: 🇸🇬 新加坡 | vless | 150
+  network: ws
+  port: 443
+  server: 188.166.231.184
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | trojan | 151
+  password: 842b5f9dd11e458d8613c907c4cc5723
+  port: 443
+  server: 149.28.151.140
+  sni: www.gpt123.one
+  type: trojan
+- name: 🇸🇬 新加坡 | vless | 153
+  network: ws
+  port: 2053
+  server: 103.136.68.176
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | trojan | 156
+  password: 16132fb0-4945-11f0-a95e-1239d0255272
+  port: 443
+  server: 91.192.81.167
+  skip-cert-verify: true
+  sni: sg4.6n6.net
+  type: trojan
+- name: 🇸🇬 新加坡 | vless | 159
+  network: ws
+  port: 443
+  server: 94.237.65.232
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 160
+  network: ws
+  port: 443
+  server: 43.174.247.29
+  servername: free.irandoc.info
+  tls: false
+  type: vless
+  uuid: 69d5b910-f291-4854-9bc7-6e3261dc60f3
+  ws-opts:
+    headers:
+      Host: free.irandoc.info
+    path: /39511/mediafp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | hy2 | 161
+  password: wSu8KVl38ul4t9a2eA5foAVaS9MR5U
+  port: 443
+  server: 103.195.189.54
+  skip-cert-verify: true
+  tls: false
+  type: hysteria2
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 162
+  network: ws
+  port: 443
+  server: 146.190.82.241
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: ee76cecf-1219-42be-ae3f-6b8077e4cacc
+  ws-opts:
+    path: /
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇸🇬 新加坡 | vless | 167
+  network: ws
+  port: 443
+  server: 47.131.189.221
+  servername: mia7.pages.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 3db635e4-f9ec-42d6-8aba-e23df8b0e6da
+  ws-opts:
+    headers:
+      Host: mia7.pages.dev
+    path: /TG:@MiaChatChannel
+- name: 🇸🇬 新加坡 | trojan | 169
+  network: ws
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
+  port: 443
+  server: 159.223.41.212
+  sni: tjsp.hhxaf.cc.cd
+  type: trojan
+  ws-opts:
+    path: /
+- name: 🇸🇬 新加坡 | vless | 170
+  network: ws
+  port: 443
+  server: 165.232.165.200
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560fp=chromefp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 171
+  network: ws
+  port: 443
+  server: 157.245.50.181
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 172
+  network: ws
+  port: 443
+  server: 138.2.87.237
+  servername: t1s1.rittbo.kdns.fr
+  tls: false
+  type: vless
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 176
+  network: ws
+  port: 443
+  server: 194.127.192.138
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 177
+  network: ws
+  port: 443
+  server: 43.156.92.214
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 178
+  network: ws
+  port: 443
+  server: 43.174.195.1
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 180
+  network: ws
+  port: 443
+  server: 43.163.76.248
+  servername: sn1.skylee5.cloudns.ch
+  tls: false
+  type: vless
+  uuid: 06b65903-406d-4a41-8463-6fd5c0ee7798
+  ws-opts:
+    headers:
+      Host: sn1.skylee5.cloudns.ch
+    path: /proxyip=proxyip.cmliussss.netsecurity=tls
+- name: 🇸🇬 新加坡 | trojan | 183
+  password: dc54abbf-0b35-4e01-8aee-3fa16cc677bd
+  port: 443
+  server: 188.166.189.168
+  sni: aka.ms
+  type: trojan
+- name: 🇸🇬 新加坡 | trojan | 185
+  password: iyinglong
+  port: 443
+  server: 18.140.67.76
+  type: trojan
+- name: 🇸🇬 新加坡 | vless | 186
+  network: ws
+  port: 443
+  server: 185.81.28.39
+  servername: t1s1.rittbo.kdns.fr
+  tls: false
+  type: vless
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /security=tls
+- name: 🇸🇬 新加坡 | vless | 187
+  network: ws
+  port: 443
+  server: 165.232.173.161
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 188
+  network: ws
+  port: 443
+  server: 157.245.159.88
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 189
+  network: ws
+  port: 443
+  server: 168.144.33.100
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 194
+  network: ws
+  port: 443
+  server: 47.131.104.124
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- client-fingerprint: chrome
+  name: 🇸🇬 新加坡 | vless | 196
+  network: ws
+  port: 8443
+  server: 161.118.195.117
+  servername: t1s1.rittbo.kdns.fr
+  tls: true
+  type: vless
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+- name: 🇸🇬 新加坡 | vless | 197
+  network: ws
+  port: 8443
+  server: 5.223.70.20
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 198
+  network: ws
+  port: 443
+  server: 168.144.128.4
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560fp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 201
+  network: ws
+  port: 443
+  server: 45.76.158.173
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 203
+  network: ws
+  port: 8443
+  server: 206.206.77.6
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #3'
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 149.28.130.108
+  sni: searchcreativejobsandshowcaseyourartistictalents.com
+  type: trojan
+- name: 🇸🇬 新加坡 | vless | 207
+  network: ws
+  port: 443
+  server: 146.190.97.53
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560fp=chromefp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 209
+  network: ws
+  port: 443
+  server: 84.32.22.205
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560fp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 211
+  network: ws
+  port: 443
+  server: 168.138.176.180
+  servername: s4ws.ragingbull.de5.net
+  tls: false
+  type: vless
+  uuid: f49d04d6-aaa7-4013-b323-bc35b78230db
+  ws-opts:
+    headers:
+      Host: s4ws.ragingbull.de5.net
+    path: /wsrb7k2mfp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 215
+  network: ws
+  port: 443
+  server: 129.212.232.171
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 216
+  network: ws
+  port: 8443
+  server: 116.251.216.12
+  servername: 1-brc.pages.dev
+  tls: true
+  type: vless
+  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
+  ws-opts:
+    headers:
+      Host: 1-brc.pages.dev
+- name: 🇸🇬 新加坡 | trojan | 220
+  password: 3ac6a6ca99f74941b1eaf892818e2ddb
+  port: 443
+  server: 185.151.146.40
+  type: trojan
+- name: 🇸🇬 新加坡 | vless | 221
+  network: ws
+  port: 443
+  server: 152.42.175.157
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 223
+  network: ws
+  port: 443
+  server: 206.189.95.233
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 225
+  network: ws
+  port: 443
+  server: 116.251.217.65
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: fp=unsafesecurity=tls
+- name: 🇸🇬 新加坡 | trojan | 226
+  network: ws
+  password: humanity
+  port: 443
+  server: 157.245.159.88
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  ws-opts:
+    path: '%2Fassignment'
+- name: 🇸🇬 新加坡 | vless | 227
+  network: ws
+  port: 443
+  server: 68.183.225.227
+  tls: true
+  type: vless
+  uuid: 981fca81-5be1-41f8-ac9b-d138e8109943
+- name: 🇸🇬 新加坡 | vless | 228
+  network: ws
+  port: 443
+  server: 66.42.61.215
+  servername: t1s1.rittbo.kdns.fr
+  tls: false
+  type: vless
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 229
+  network: ws
+  port: 443
+  server: 45.76.189.166
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 230
+  port: 443
+  server: 165.245.182.116
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+- name: 🇸🇬 新加坡 | vless | 231
+  network: ws
+  port: 443
+  server: 159.223.78.76
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 232
+  network: ws
+  port: 443
+  server: 139.162.62.195
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 234
+  network: ws
+  port: 443
+  server: 174.138.24.13
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 235
+  network: ws
+  port: 443
+  server: 185.220.68.227
+  servername: us-lax.862400.xyz
+  tls: false
+  type: vless
+  uuid: 81eed05f-e2d0-4944-9e48-caeb8d036557
+  ws-opts:
+    headers:
+      Host: us-lax.862400.xyz
+    path: /announcementfp=randomsecurity=tls
+- alpn:
+  - h3
+  - h2
+  name: 🇸🇬 新加坡 | vless | 236
+  network: ws
+  port: 443
+  server: 167.172.75.10
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 237
+  network: ws
+  port: 443
+  server: 178.93.160.236
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 238
+  network: ws
+  port: 443
+  server: 141.11.43.55
+  servername: testcf.motherfuck.dpdns.org
+  tls: false
+  type: vless
+  uuid: 0d251504-8b91-4744-8130-412ec76af13f
+  ws-opts:
+    headers:
+      Host: testcf.motherfuck.dpdns.org
+    path: /?proxyip=141.11.43.55:443fp=randomsecurity=tls
+- name: 🇸🇬 新加坡 | trojan | 241
+  network: ws
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
+  port: 443
+  server: 45.128.222.55
+  sni: hhcm.hhxaf.cc.cd
+  type: trojan
+  ws-opts:
+    path: /
+- name: 🇸🇬 新加坡 | vless | 243
+  network: ws
+  port: 443
+  server: 216.195.195.205
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=unsafefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 244
+  network: ws
+  port: 2053
+  server: 5.34.177.212
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | vless | 246
+  network: ws
+  port: 443
+  server: 128.1.186.61
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromesecurity=tls
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 248
+  network: tcp
+  port: 18000
+  server: ww11.levikogjgfdd.ir
+  servername: null
+  tls: false
+  type: vmess
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+- alterId: 64
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 251
+  network: ws
+  port: 443
+  server: 202.79.172.53
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: 30216206-14b7-40e7-995d-61c1219ba584
+  ws-opts:
+    path: /path/220128071100
+- name: 🇸🇬 新加坡 | trojan | 252
+  password: 6e1b9a65-884f-3aa9-9469-bf6ec0f08610
+  port: 443
+  server: 27.122.59.45
+  skip-cert-verify: true
+  sni: 45.32.28.232
+  type: trojan
+- name: 🇸🇬 新加坡 | trojan | 253
+  password: b7bc6b1c-610d-4d39-ad29-18a0d6902348
+  port: 443
+  server: 13.250.150.119
+  skip-cert-verify: true
+  sni: usa.liangyuandian.top
+  type: trojan
+- name: 🇸🇬 新加坡 | vless | 261
+  network: ws
+  port: 443
+  server: 172.93.219.9
+  servername: snip.edgeoneai.cc.cd
+  tls: false
+  type: vless
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+    path: /fp=chromefp=chromesecurity=tls
+- name: 🇸🇬 新加坡 | trojan | 275
+  password: 29086912-33e4-4e06-ba2b-60f1a195864f
+  port: 24999
+  server: tjxjp.m2k699.com
+  skip-cert-verify: true
+  sni: www.itunes.com
+  type: trojan
+- client-fingerprint: chrome
+  encryption: mlkem768x25519plus.native.0rtt.HgOBFNZBsI-IbLuV7IeOJbMRNb9CodLXi3YDHVWPWQU
+  name: 🇸🇬 新加坡 | vless | 276
+  network: ws
+  port: 443
+  server: msydjt.com
+  servername: msydjt.com
+  tls: true
+  type: vless
+  uuid: 024cf4e8-fa64-44ea-b22f-c28437120563
+  ws-opts:
+    headers:
+      Host: ded1ws.samcdn.shop
+    path: /51544/ws
+- name: 🇸🇬 新加坡 | trojan | 277
+  password: 7647b321-4bfe-43f3-b21f-926c5de8f9b6
+  port: 44370
+  server: sg-3.gsafevpnapi.com
+  sni: www.yahoo.com
+  type: trojan
+- client-fingerprint: chrome
+  name: 🇸🇬 新加坡 | vless | 280
+  port: 36032
+  server: gz2.vatilon.cc
+  servername: us2.australiacaregroup.site
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: aec8e5e3-bb81-4b22-8802-0b88c54997b3
+- client-fingerprint: chrome
+  encryption: mlkem768x25519plus.native.0rtt.HgOBFNZBsI-IbLuV7IeOJbMRNb9CodLXi3YDHVWPWQU
+  name: 🇸🇬 新加坡 | vless | 284
+  network: ws
+  port: 443
+  server: www.naviga-ting.com
+  servername: www.naviga-ting.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 024cf4e8-fa64-44ea-b22f-c28437120563
+  ws-opts:
+    headers:
+      Host: ded1ws.samcdn.shop
+    path: /51544/ws
+- name: 🇸🇬 新加坡 | vless | 287
+  network: ws
+  port: 443
+  server: status.luminesight.com
+  servername: status.luminesight.com
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 5bfb1d65-4dac-48c6-a5c8-3a4be1964b84
+  ws-opts:
+    headers:
+      Host: dews.irandoc.info
+    path: /15754/socketfp=firefoxsecurity=tls
+- name: 🇸🇬 新加坡 | vless | 288
+  network: ws
+  port: 443
+  server: cms.umtheme.com
+  servername: st1sni.irandoc.info
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: a256f249-7d63-4754-a83c-aaef9d96e57f
+  ws-opts:
+    headers:
+      Host: st1sni.irandoc.info
+    path: /54863/googlefp=firefoxsecurity=tls
+- client-fingerprint: chrome
+  name: 🇸🇬 新加坡 | vless | 290
+  network: ws
+  port: 443
+  server: free.nadun.store
+  tls: true
+  type: vless
+  uuid: 20ff936a-8eb5-4d27-9cce-93f2016d467b
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 291
+  network: ws
+  port: 55386
+  server: az-1.linkaa.xyz
+  servername: az-1.linkaa.xyz
+  tls: false
+  type: vmess
+  uuid: 6E571484-4166-4699-8F58-B34A1823691F
+  ws-opts:
+    headers:
+      Host: az-1.linkaa.xyz
+    path: /game/resources
+- client-fingerprint: chrome
+  name: 🇸🇬 新加坡 | vless | 292
+  port: 443
+  server: img.yhxjlb.com
+  servername: channel.irandoc.info
+  tls: true
+  type: vless
+  uuid: 79af209c-dd50-4751-8100-9107b536a022
+- client-fingerprint: chrome
+  name: 🇸🇬 新加坡 | vless | 293
+  port: 443
+  server: www.hxino.com
+  servername: www.hxino.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 00f8cbcc-bf10-418b-a842-35519f460c7f
+- name: 🇸🇬 新加坡 | vless | 295
+  network: ws
+  port: 443
+  server: lovesykun.cn
+  servername: lovesykun.cn
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 00f8cbcc-bf10-418b-a842-35519f460c7f
+  ws-opts:
+    headers:
+      Host: dews.irandoc.info
+    path: /15753/socketfp=chromesecurity=tls
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 新加坡 | vmess | 297
+  network: ws
+  port: 53110
+  server: az-1.linkaa.xyz
+  servername: az-1.linkaa.xyz
+  tls: false
+  type: vmess
+  uuid: 6E571484-4166-4699-8F58-B34A1823691F
+  ws-opts:
+    headers:
+      Host: az-1.linkaa.xyz
+    path: /game/resources
+- client-fingerprint: firefox
+  name: 🇸🇬 新加坡 | vless | 302
+  port: 443
+  server: 45.76.155.179
+  servername: sg003.zestapp778.com
+  tls: true
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+- alterId: 0
+  cipher: auto
+  name: SG7｜机房｜高风险 (黑名单)
+  network: tcp
+  port: 59952
+  server: 103.181.165.145
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 0
+  cipher: auto
+  name: SG6｜原生/疑似家宽｜非常安全
+  network: tcp
+  port: 37086
+  server: tunnel1.qqa678.com
+  tls: false
+  type: vmess
+  uuid: 0863424a-f6e8-4486-b85a-a7144ee89ddc
+- name: '🇸🇬[www.v2nodes.com] vless-SG #1'
+  network: ws
+  port: 443
+  server: 172.64.152.241
+  servername: ccc.010304.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /fpsecurity=tls
+- name: '🇸🇬[www.v2nodes.com] vless-SG-1... #7'
+  network: ws
+  port: 2096
+  server: 139.162.27.96
+  servername: free-server.techsonic.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  ws-opts:
+    headers:
+      Host: free-server.techsonic.dev
+    path: /free-server.techsonic.devfp=chrome
+- name: '🇸🇬[www.v2nodes.com] vless-SG-1... #12'
+  network: ws
+  port: 443
+  server: cf.877774.xyz
+  servername: ccc.010304.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /fpsecurity=tls
+- name: '🇸🇬[www.v2nodes.com] vless-SG-9... #4'
+  network: ws
+  port: 443
+  server: 172.66.0.162
+  servername: ccc.010304.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /security=tls
+- name: '🇸🇬[www.v2nodes.com] vless-SG-9... #5'
+  network: ws
+  port: 443
+  server: 104.26.4.2
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /fp=chromefp=chrome
+- name: '🇸🇬[www.v2nodes.com] vless-SG-8... #2'
   network: ws
   port: 443
   server: 104.26.4.2
@@ -98,22 +2143,7 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp=chrome
-- client-fingerprint: chrome
-  name: 🇸🇬[www.v2nodes.com] vless-SG-8...
-  network: ws
-  port: 443
-  server: 104.26.4.2
-  servername: ccc.010304.xyz
-  tls: true
-  type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-    path: /
-- client-fingerprint: chrome
-  encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG-8... #1'
+- name: '🇸🇬[www.v2nodes.com] vless-SG-8... #3'
   network: ws
   port: 443
   server: 104.18.40.100
@@ -125,9 +2155,8 @@ proxies:
   ws-opts:
     headers:
       Host: ccc.010304.xyz
-    path: /
-- client-fingerprint: chrome
-  name: '🇸🇬[www.v2nodes.com] vless-SG-8... #2'
+    path: /fp=chrome
+- name: '🇸🇬[www.v2nodes.com] vless-SG-8... #4'
   network: ws
   port: 443
   server: 172.66.154.57
@@ -138,36 +2167,15 @@ proxies:
   ws-opts:
     headers:
       Host: ccc.010304.xyz
-    path: /
-- name: 🇸🇬[www.v2nodes.com] trojan-SG-...
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 149.28.130.108
-  sni: searchcreativejobsandshowcaseyourartistictalents.com
-  type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #1'
+    path: /fp=chrome
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #4'
   password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
   port: 8886
   server: 139.180.146.200
   type: trojan
 - alterId: 0
   cipher: auto
-  name: 🇸🇬 新加坡|@ripaojiedian
-  network: ws
-  port: 443
-  server: ASaqYIDZa9WDQ9Kq.v.3dns.vip
-  servername: ASaqYIDZa9WDQ9Kq.v.3dns.vip
-  skip-cert-verify: false
-  tls: true
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  ws-opts:
-    headers:
-      Host: ASaqYIDZa9WDQ9Kq.v.3dns.vip
-    path: /ws-vmess
-- alterId: 0
-  cipher: auto
-  name: 🇸🇬 新加坡2|@ripaojiedian
+  name: '🇸🇬 新加坡2|@ripaojiedian #3'
   network: ws
   port: 443
   server: 6JiziO8PxQAXBAtZ.v.3dns.vip
@@ -180,22 +2188,3 @@ proxies:
     headers:
       Host: 6JiziO8PxQAXBAtZ.v.3dns.vip
     path: /ws-vmess
-- name: 新加坡|@ripaojiedian
-  network: tcp
-  password: AA885B42-133C-3828-FB69-E45105C06092
-  port: 10135
-  server: 7d0a2gz0-7a0c.aws-agent.net
-  skip-cert-verify: true
-  sni: m.ctrip.com
-  type: trojan
-- alpn:
-  - h2
-  - http/1.1
-  name: 🇸🇬 新加坡 | SGP
-  password: c86efa7e-f7fb-47d6-b832-6b44cf5e8b71
-  port: 12201
-  server: sg01.dw.sh-cloudflare.sbs
-  skip-cert-verify: true
-  sni: sg01.shanhai.me
-  type: anytls
-  udp: true
